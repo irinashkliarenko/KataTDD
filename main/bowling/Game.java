@@ -8,7 +8,9 @@ public class Game {
 	public int score() {
 		int score = 0;
 		int frameIndex = 0;
-		for(int i=0; i<10; i++) {
+		int FRAME_SIZE = 10;
+		
+		for(int i=0; i < FRAME_SIZE; i++) {
 			if(isStrike(frameIndex)) {
 				score += 10 + strikeBonus(frameIndex);
 				frameIndex++;
