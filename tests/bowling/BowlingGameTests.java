@@ -28,6 +28,19 @@ public class BowlingGameTests {
 		assertEquals(16, game.score());
 	}
 	
+	@Test
+	public void canRollStrike() throws Exception {
+		rollStrike();
+		game.roll(5);	
+		game.roll(3);	
+		rollMany(16, 0);
+		assertEquals(26, game.score());
+	}
+	
+	private void rollStrike() {
+		game.roll(10);
+	}
+	
 	private void rollMany(int n, int pins) {
 		for(int i=0; i<n; i++) {
 			game.roll(pins);
